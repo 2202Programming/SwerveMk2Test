@@ -8,6 +8,6 @@ public final class Main {
     {
         RobotBase.startRobot(Robot::new);
         //hi
-        System.out.print("Hi");
+        // test
     }
 }
