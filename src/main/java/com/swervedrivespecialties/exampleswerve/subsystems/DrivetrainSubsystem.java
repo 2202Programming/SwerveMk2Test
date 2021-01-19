@@ -31,12 +31,13 @@ public class DrivetrainSubsystem extends Subsystem {
 
     private static DrivetrainSubsystem instance;
 
+    private static final CANSparkMax FLDMotor = new CANSparkMax(RobotMap.DRIVETRAIN_FRONT_LEFT_DRIVE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
     private final SwerveModule frontLeftModule = new Mk2SwerveModuleBuilder(
             new Vector2(TRACKWIDTH / 2.0, WHEELBASE / 2.0))
-            .angleEncoder(new AnalogInput(RobotMap.DRIVETRAIN_FRONT_LEFT_ANGLE_ENCODER), FRONT_LEFT_ANGLE_OFFSET)
+            .angleEncoder(FLDMotor.getEncoder(), FRONT_LEFT_ANGLE_OFFSET)
             .angleMotor(new CANSparkMax(RobotMap.DRIVETRAIN_FRONT_LEFT_ANGLE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless),
                     Mk2SwerveModuleBuilder.MotorType.NEO)
-            .driveMotor(new CANSparkMax(RobotMap.DRIVETRAIN_FRONT_LEFT_DRIVE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless),
+            .driveMotor(FLDMotor,
                     Mk2SwerveModuleBuilder.MotorType.NEO)
             .build();
     private final SwerveModule frontRightModule = new Mk2SwerveModuleBuilder(
@@ -64,6 +65,7 @@ public class DrivetrainSubsystem extends Subsystem {
                     Mk2SwerveModuleBuilder.MotorType.NEO)
             .build();
 
+// Locations for the swerve drive modules relative to the robot center.
     private final SwerveDriveKinematics kinematics = new SwerveDriveKinematics(
             new Translation2d(TRACKWIDTH / 2.0, WHEELBASE / 2.0),
             new Translation2d(TRACKWIDTH / 2.0, -WHEELBASE / 2.0),
