@@ -86,7 +86,7 @@ public class Mk2SwerveModuleBuilder {
      *                the true module angle.
      * @return The builder.
      */
-    public Mk2SwerveModuleBuilder angleEncoder(int encoder) {
+    public Mk2SwerveModuleBuilder angleEncoder(CANEncoder encoder) {
         angleSupplier = () -> {
             // double angle = (1.0 - encoder.getVoltage() / RobotController.getVoltage5V()) * 2.0 * Math.PI;
             // angle += offset;
@@ -94,10 +94,8 @@ public class Mk2SwerveModuleBuilder {
             // if (angle < 0.0) {
             //     angle += 2.0 * Math.PI;
             // }
-
-            double angle = 0; 
-
-            return angle;
+            
+            return encoder.getPosition();
         };
 
         return this;

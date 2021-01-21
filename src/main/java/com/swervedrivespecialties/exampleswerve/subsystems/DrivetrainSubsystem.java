@@ -18,8 +18,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.frcteam2910.common.drivers.Gyroscope;
 import org.frcteam2910.common.drivers.SwerveModule;
 import org.frcteam2910.common.math.Vector2;
-import org.frcteam2910.common.robot.drivers.Mk2SwerveModuleBuilder;
+//import org.frcteam2910.common.robot.drivers.Mk2SwerveModuleBuilder;
 import org.frcteam2910.common.robot.drivers.NavX;
+
+import Mk2SwerveModuleBuilder;
 
 public class DrivetrainSubsystem extends Subsystem {
     private static final double TRACKWIDTH = 19.5;
@@ -34,10 +36,11 @@ public class DrivetrainSubsystem extends Subsystem {
 
     private static final CANSparkMax FLDMotor = new CANSparkMax(RobotMap.DRIVETRAIN_FRONT_LEFT_DRIVE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
     
-    private static final CANCoder m_CANCoder1 = new CANCoder(5);
+    private static final CANCoder frontLeftCANCoder = new CANCoder(RobotMap.DRIVETRAIN_FRONT_LEFT_ENCODER);
+
     private final SwerveModule frontLeftModule = new Mk2SwerveModuleBuilder(
             new Vector2(TRACKWIDTH / 2.0, WHEELBASE / 2.0))
-            //.angleEncoder(FLDMotor.getEncoder(), FRONT_LEFT_ANGLE_OFFSET)
+            .angleEncoder(frontLeftCANCoder)
             .angleMotor(new CANSparkMax(RobotMap.DRIVETRAIN_FRONT_LEFT_ANGLE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless),
                     Mk2SwerveModuleBuilder.MotorType.NEO)
             .driveMotor(FLDMotor,
