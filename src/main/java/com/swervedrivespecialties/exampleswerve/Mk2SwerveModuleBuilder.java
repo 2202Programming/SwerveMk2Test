@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.TalonFXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
+import com.ctre.phoenix.sensors.CANCoder;
 import com.revrobotics.CANEncoder;
 import com.revrobotics.CANPIDController;
 import com.revrobotics.CANSparkMax;
@@ -86,7 +87,7 @@ public class Mk2SwerveModuleBuilder {
      *                the true module angle.
      * @return The builder.
      */
-    public Mk2SwerveModuleBuilder angleEncoder(CANEncoder encoder) {
+    public Mk2SwerveModuleBuilder angleEncoder(CANCoder encoder) {
         angleSupplier = () -> {
             // double angle = (1.0 - encoder.getVoltage() / RobotController.getVoltage5V()) * 2.0 * Math.PI;
             // angle += offset;

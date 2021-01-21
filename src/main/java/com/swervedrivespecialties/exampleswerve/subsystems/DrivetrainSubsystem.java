@@ -21,7 +21,7 @@ import org.frcteam2910.common.math.Vector2;
 //import org.frcteam2910.common.robot.drivers.Mk2SwerveModuleBuilder;
 import org.frcteam2910.common.robot.drivers.NavX;
 
-import Mk2SwerveModuleBuilder;
+import com.swervedrivespecialties.exampleswerve.Mk2SwerveModuleBuilder;
 
 public class DrivetrainSubsystem extends Subsystem {
     private static final double TRACKWIDTH = 19.5;
@@ -37,6 +37,9 @@ public class DrivetrainSubsystem extends Subsystem {
     private static final CANSparkMax FLDMotor = new CANSparkMax(RobotMap.DRIVETRAIN_FRONT_LEFT_DRIVE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
     
     private static final CANCoder frontLeftCANCoder = new CANCoder(RobotMap.DRIVETRAIN_FRONT_LEFT_ENCODER);
+    private static final CANCoder frontRightCANCoder = new CANCoder(RobotMap.DRIVETRAIN_FRONT_RIGHT_ENCODER);
+    private static final CANCoder backLeftCANCoder = new CANCoder(RobotMap.DRIVETRAIN_BACK_LEFT_ENCODER);
+    private static final CANCoder backRightCANCoder = new CANCoder(RobotMap.DRIVETRAIN_BACK_RIGHT_ENCODER);
 
     private final SwerveModule frontLeftModule = new Mk2SwerveModuleBuilder(
             new Vector2(TRACKWIDTH / 2.0, WHEELBASE / 2.0))
@@ -48,6 +51,7 @@ public class DrivetrainSubsystem extends Subsystem {
             .build();
     private final SwerveModule frontRightModule = new Mk2SwerveModuleBuilder(
             new Vector2(TRACKWIDTH / 2.0, -WHEELBASE / 2.0))
+            .angleEncoder(frontRightCANCoder)
             //.angleEncoder(new AnalogInput(RobotMap.DRIVETRAIN_FRONT_RIGHT_ANGLE_ENCODER), FRONT_RIGHT_ANGLE_OFFSET)
             .angleMotor(new CANSparkMax(RobotMap.DRIVETRAIN_FRONT_RIGHT_ANGLE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless),
                     Mk2SwerveModuleBuilder.MotorType.NEO)
@@ -56,6 +60,7 @@ public class DrivetrainSubsystem extends Subsystem {
             .build();
     private final SwerveModule backLeftModule = new Mk2SwerveModuleBuilder(
             new Vector2(-TRACKWIDTH / 2.0, WHEELBASE / 2.0))
+            .angleEncoder(backLeftCANCoder)
             //.angleEncoder(new AnalogInput(RobotMap.DRIVETRAIN_BACK_LEFT_ANGLE_ENCODER), BACK_LEFT_ANGLE_OFFSET)
             .angleMotor(new CANSparkMax(RobotMap.DRIVETRAIN_BACK_LEFT_ANGLE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless),
                     Mk2SwerveModuleBuilder.MotorType.NEO)
@@ -64,6 +69,7 @@ public class DrivetrainSubsystem extends Subsystem {
             .build();
     private final SwerveModule backRightModule = new Mk2SwerveModuleBuilder(
             new Vector2(-TRACKWIDTH / 2.0, -WHEELBASE / 2.0))
+            .angleEncoder(backRightCANCoder)
             //.angleEncoder(new AnalogInput(RobotMap.DRIVETRAIN_BACK_RIGHT_ANGLE_ENCODER), BACK_RIGHT_ANGLE_OFFSET)
             .angleMotor(new CANSparkMax(RobotMap.DRIVETRAIN_BACK_RIGHT_ANGLE_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless),
                     Mk2SwerveModuleBuilder.MotorType.NEO)
