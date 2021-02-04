@@ -112,12 +112,121 @@ public class DrivetrainSubsystem extends Subsystem {
         backLeftModule.updateSensors();
         backRightModule.updateSensors();
 
+
         SmartDashboard.putNumber("Front Left Module Angle", Math.toDegrees(frontLeftModule.getCurrentAngle()));
         SmartDashboard.putNumber("Front Right Module Angle", Math.toDegrees(frontRightModule.getCurrentAngle()));
         SmartDashboard.putNumber("Back Left Module Angle", Math.toDegrees(backLeftModule.getCurrentAngle()));
         SmartDashboard.putNumber("Back Right Module Angle", Math.toDegrees(backRightModule.getCurrentAngle()));
 
+        // The distance a specific module has driven ever snce the robot started up
+        SmartDashboard.putString("Module Distances", "Distance module has drive since robot started up");
+        SmartDashboard.putNumber("Front Left Module Distance", frontLeftModule.getCurrentDistance());
+        SmartDashboard.putNumber("Front Right Module Distance", frontRightModule.getCurrentDistance());
+        SmartDashboard.putNumber("Back Left Module Distance", backLeftModule.getCurrentDistance());
+        SmartDashboard.putNumber("Back Right Module Distance", backRightModule.getCurrentDistance());
+
+
+// Current position of module
+        SmartDashboard.putString("Current Position", "Position x-Coordinate (relative to center)");
+        SmartDashboard.putNumber("Front Left Module Current Position x-Coordinate", frontLeftModule.getCurrentPosition().x);
+        SmartDashboard.putNumber("Front Right Module Current Position x-Coordinate", frontRightModule.getCurrentPosition().x);
+        SmartDashboard.putNumber("Back Left Module Current Position x-Coordinate", backLeftModule.getCurrentPosition().x);
+        SmartDashboard.putNumber("Back Right Module Current Position x-Coordinate", backRightModule.getCurrentPosition().x);
+
+        SmartDashboard.putString("Current Position", "Position y-Coordinate (relative to center)");
+        SmartDashboard.putNumber("Front Left Module Current Position y-Coordinate", frontLeftModule.getCurrentPosition().y);
+        SmartDashboard.putNumber("Front Right Module Current Position y-Coordinate", frontRightModule.getCurrentPosition().y);
+        SmartDashboard.putNumber("Back Left Module Current Position y-Coordinate", backLeftModule.getCurrentPosition().y);
+        SmartDashboard.putNumber("Back Right Module Current Position y-Coordinate", backRightModule.getCurrentPosition().y);
+
+        
+// A module's location relative to the center of mass the robot
+        SmartDashboard.putString("Module Location Relative to Center of Robot", "Location x-Coordinate");
+        SmartDashboard.putNumber("Front Left Module x-Coordinate", frontLeftModule.getModulePosition().x);
+        SmartDashboard.putNumber("Front Right Module x-Coordinate", frontRightModule.getModulePosition().x);
+        SmartDashboard.putNumber("Back Left Module x-Coordinate", backLeftModule.getModulePosition().x);
+        SmartDashboard.putNumber("Back Right Module x-Coordinate", backRightModule.getModulePosition().x);
+
+        SmartDashboard.putString("Module Location Relative to Center of Robot", "Location y-Coordinate");
+        SmartDashboard.putNumber("Front Left Module y-Coordinate", frontLeftModule.getModulePosition().y);
+        SmartDashboard.putNumber("Front Right Module y-Coordinate", frontRightModule.getModulePosition().y);
+        SmartDashboard.putNumber("Back Left Module y-Coordinate", backLeftModule.getModulePosition().y);
+        SmartDashboard.putNumber("Back Right Module y-Coordinate", backRightModule.getModulePosition().y);
+
+
+// Velocity that modules are at
+        SmartDashboard.putString("Module Velocity", "Velocity");
+        SmartDashboard.putNumber("Front Left Module Velocity", frontLeftModule.getCurrentVelocity());
+        SmartDashboard.putNumber("Front Right Module Velocity", frontRightModule.getCurrentVelocity());
+        SmartDashboard.putNumber("Back Left Module Velocity", backLeftModule.getCurrentVelocity());
+        SmartDashboard.putNumber("Back Right Module Velocity", backRightModule.getCurrentVelocity());
+
+
+// Target velocity
+        SmartDashboard.putString("Target Velocity", "Velocity Magnitude");
+        SmartDashboard.putNumber("Front Left Module Target Velocity Degree", frontLeftModule.getTargetVelocity().length);
+        SmartDashboard.putNumber("Front Right Module Target Velocity Degree", frontRightModule.getTargetVelocity().length);
+        SmartDashboard.putNumber("Back Left Module Target Velocity Degree", backLeftModule.getTargetVelocity().length);
+        SmartDashboard.putNumber("Back Right Module Target Velocity Degree", backRightModule.getTargetVelocity().length);
+
+        SmartDashboard.putString("Target Velocity", "Velocity Degree");
+        SmartDashboard.putNumber("Front Left Module Target Velocity Degree", frontLeftModule.getTargetVelocity().getAngle().toDegrees());
+        SmartDashboard.putNumber("Front Right Module Target Velocity Degree", frontRightModule.getTargetVelocity().getAngle().toDegrees());
+        SmartDashboard.putNumber("Back Left Module Target Velocity Degree", backLeftModule.getTargetVelocity().getAngle().toDegrees());
+        SmartDashboard.putNumber("Back Right Module Target Velocity Degree", backRightModule.getTargetVelocity().getAngle().toDegrees());
+
+
+
+
+//CAN Encoder stuff
+        SmartDashboard.putString("CAN Encoder Absolute Position", "Absolute Position");
+        SmartDashboard.putNumber("CAN Encoder Absolute Position", frontLeftCANCoder.getAbsolutePosition());
+        SmartDashboard.putNumber("CAN Encoder Absolute Position", frontRightCANCoder.getAbsolutePosition());
+        SmartDashboard.putNumber("CAN Encoder Absolute Position", backLeftCANCoder.getAbsolutePosition());
+        SmartDashboard.putNumber("CAN Encoder Absolute Position", backRightCANCoder.getAbsolutePosition());
+
+        SmartDashboard.putString("CAN Encoder Position", "Position");
+        SmartDashboard.putNumber("CAN Encoder Position", frontLeftCANCoder.getPosition());
+        SmartDashboard.putNumber("CAN Encoder Position", frontRightCANCoder.getPosition());
+        SmartDashboard.putNumber("CAN Encoder Position", backLeftCANCoder.getPosition());
+        SmartDashboard.putNumber("CAN Encoder Position", backRightCANCoder.getPosition());
+
+        SmartDashboard.putString("CAN Encoder Velocity", "Velocity");
+        SmartDashboard.putNumber("CAN Encoder Velocity", frontLeftCANCoder.getVelocity());
+        SmartDashboard.putNumber("CAN Encoder Velocity", frontRightCANCoder.getVelocity());
+        SmartDashboard.putNumber("CAN Encoder Velocity", backLeftCANCoder.getVelocity());
+        SmartDashboard.putNumber("CAN Encoder Velocity", backRightCANCoder.getVelocity());
+
+        SmartDashboard.putString("CAN Encoder Previous Error", "Previous Error");
+        SmartDashboard.putString("CAN Encoder Previous Error", frontLeftCANCoder.getLastError().toString());
+        SmartDashboard.putString("CAN Encoder Previous Error", frontRightCANCoder.getLastError().toString());
+        SmartDashboard.putString("CAN Encoder Previous Error", backLeftCANCoder.getLastError().toString());
+        SmartDashboard.putString("CAN Encoder Previous Error", backRightCANCoder.getLastError().toString());
+
         SmartDashboard.putNumber("Gyroscope Angle", gyroscope.getAngle().toDegrees());
+        // Added Gyroscope Info
+        SmartDashboard.putString("Gyro Info", "Gyro");
+        SmartDashboard.putNumber("Gyroscope Rate", gyroscope.getRate());
+        SmartDashboard.putNumber("Gyroscope Unadjusted Rate", gyroscope.getUnadjustedRate());
+        SmartDashboard.putNumber("Gyrscope Adjustement Angle (degrees)", gyroscope.getAdjustmentAngle().toDegrees());
+        SmartDashboard.putNumber("Gyriscioe Unadjusted Angle (degrees)", gyroscope.getUnadjustedAngle().toDegrees());
+
+
+// FLDmotor stuff
+        SmartDashboard.putString("FLD Motor Information", "FLD Motor Information");
+        SmartDashboard.putNumber("FLDMotor Current Set Speed", FLDMotor.get());
+        SmartDashboard.putNumber("FLDMotor Applied Output Duty Cycle", FLDMotor.getAppliedOutput());
+        SmartDashboard.putNumber("FLDMotor Bus Voltage", FLDMotor.getBusVoltage());
+        SmartDashboard.putNumber("FLDMotor Max Rate Controller's Output Can Change", FLDMotor.getClosedLoopRampRate());
+        SmartDashboard.putNumber("FLDMotor Output Current", FLDMotor.getOutputCurrent());
+        SmartDashboard.putNumber("FLDMotor Ideal Votlage Value", FLDMotor.getVoltageCompensationNominalVoltage());
+        SmartDashboard.putBoolean("FLDMotor Is Inverted?", FLDMotor.getInverted());
+        SmartDashboard.putString("FLDMotor Previous Error", FLDMotor.getLastError().toString());
+        SmartDashboard.putNumber("FLDMotor stuff", FLDMotor.getOpenLoopRampRate());
+
+
+
+
 
         frontLeftModule.updateState(TimedRobot.kDefaultPeriod);
         frontRightModule.updateState(TimedRobot.kDefaultPeriod);
@@ -128,12 +237,16 @@ public class DrivetrainSubsystem extends Subsystem {
     public void drive(Translation2d translation, double rotation, boolean fieldOriented) {
         rotation *= 2.0 / Math.hypot(WHEELBASE, TRACKWIDTH);
         ChassisSpeeds speeds;
-        if (fieldOriented) {
+ // Commented out because we don't need this, the basic thing is fine. Leaving variable in there because we may use this later
+ 
+ /*    
+    if (fieldOriented) {
             speeds = ChassisSpeeds.fromFieldRelativeSpeeds(translation.getX(), translation.getY(), rotation,
                     Rotation2d.fromDegrees(gyroscope.getAngle().toDegrees()));
         } else {
+                */
             speeds = new ChassisSpeeds(translation.getX(), translation.getY(), rotation);
-        }
+ //       }
 
         SwerveModuleState[] states = kinematics.toSwerveModuleStates(speeds);
         frontLeftModule.setTargetVelocity(states[0].speedMetersPerSecond, states[0].angle.getRadians());
