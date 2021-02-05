@@ -237,16 +237,14 @@ public class DrivetrainSubsystem extends Subsystem {
     public void drive(Translation2d translation, double rotation, boolean fieldOriented) {
         rotation *= 2.0 / Math.hypot(WHEELBASE, TRACKWIDTH);
         ChassisSpeeds speeds;
- // Commented out because we don't need this, the basic thing is fine. Leaving variable in there because we may use this later
- 
- /*    
+  
     if (fieldOriented) {
             speeds = ChassisSpeeds.fromFieldRelativeSpeeds(translation.getX(), translation.getY(), rotation,
                     Rotation2d.fromDegrees(gyroscope.getAngle().toDegrees()));
         } else {
-                */
+
             speeds = new ChassisSpeeds(translation.getX(), translation.getY(), rotation);
- //       }
+       }
 
         SwerveModuleState[] states = kinematics.toSwerveModuleStates(speeds);
         frontLeftModule.setTargetVelocity(states[0].speedMetersPerSecond, states[0].angle.getRadians());
