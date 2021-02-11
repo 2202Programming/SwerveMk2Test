@@ -95,11 +95,13 @@ public class DrivetrainSubsystem extends Subsystem {
         frontRightModule.setName("Front Right");
         backLeftModule.setName("Back Left");
         backRightModule.setName("Back Right");
-
+/*
         frontLeftCANCoder.setPosition(0);
         frontRightCANCoder.setPosition(0);
         backLeftCANCoder.setPosition(0);
         backRightCANCoder.setPosition(0);
+        */
+        
     }
 
     public static DrivetrainSubsystem getInstance() {
