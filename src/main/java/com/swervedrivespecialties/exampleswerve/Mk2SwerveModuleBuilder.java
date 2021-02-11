@@ -95,8 +95,8 @@ public class Mk2SwerveModuleBuilder {
             // if (angle < 0.0) {
             //     angle += 2.0 * Math.PI;
             // }
-            
-            return encoder.getPosition();
+            return encoder.getAbsolutePosition();
+            //return encoder.getPosition();
         };
 
         return this;
