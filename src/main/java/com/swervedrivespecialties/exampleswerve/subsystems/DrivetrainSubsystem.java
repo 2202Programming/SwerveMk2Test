@@ -112,46 +112,46 @@ public class DrivetrainSubsystem extends Subsystem {
         backLeftModule.updateSensors();
         backRightModule.updateSensors();
 
-
-        SmartDashboard.putNumber("Front Left Module Angle", Math.toDegrees(frontLeftModule.getCurrentAngle()));
-        SmartDashboard.putNumber("Front Right Module Angle", Math.toDegrees(frontRightModule.getCurrentAngle()));
-        SmartDashboard.putNumber("Back Left Module Angle", Math.toDegrees(backLeftModule.getCurrentAngle()));
-        SmartDashboard.putNumber("Back Right Module Angle", Math.toDegrees(backRightModule.getCurrentAngle()));
+        SmartDashboard.putString("Modules/Module Anlges", "Angles");
+        SmartDashboard.putNumber("Modules/Front Left Module Angle", Math.toDegrees(frontLeftModule.getCurrentAngle()));
+        SmartDashboard.putNumber("Modules/Front Right Module Angle", Math.toDegrees(frontRightModule.getCurrentAngle()));
+        SmartDashboard.putNumber("Modules/Back Left Module Angle", Math.toDegrees(backLeftModule.getCurrentAngle()));
+        SmartDashboard.putNumber("Modules/Back Right Module Angle", Math.toDegrees(backRightModule.getCurrentAngle()));
 
         // The distance a specific module has driven ever snce the robot started up
-        SmartDashboard.putString("Module Distances", "Distance module has drive since robot started up");
-        SmartDashboard.putNumber("Front Left Module Distance", frontLeftModule.getCurrentDistance());
-        SmartDashboard.putNumber("Front Right Module Distance", frontRightModule.getCurrentDistance());
-        SmartDashboard.putNumber("Back Left Module Distance", backLeftModule.getCurrentDistance());
-        SmartDashboard.putNumber("Back Right Module Distance", backRightModule.getCurrentDistance());
+        SmartDashboard.putString("Modules/Module Distances", "Distance module has drive since robot started up");
+        SmartDashboard.putNumber("Modules/Front Left Module Distance", frontLeftModule.getCurrentDistance());
+        SmartDashboard.putNumber("Modules/Front Right Module Distance", frontRightModule.getCurrentDistance());
+        SmartDashboard.putNumber("Modules/Back Left Module Distance", backLeftModule.getCurrentDistance());
+        SmartDashboard.putNumber("Modules/Back Right Module Distance", backRightModule.getCurrentDistance());
 
 
 // Current position of module
-        SmartDashboard.putString("Current Position", "Position x-Coordinate (relative to center)");
-        SmartDashboard.putNumber("Front Left Module Current Position x-Coordinate", frontLeftModule.getCurrentPosition().x);
-        SmartDashboard.putNumber("Front Right Module Current Position x-Coordinate", frontRightModule.getCurrentPosition().x);
-        SmartDashboard.putNumber("Back Left Module Current Position x-Coordinate", backLeftModule.getCurrentPosition().x);
-        SmartDashboard.putNumber("Back Right Module Current Position x-Coordinate", backRightModule.getCurrentPosition().x);
+        SmartDashboard.putString("Modules/Current Position", "Position x-Coordinate (relative to center)");
+        SmartDashboard.putNumber("Modules/Front Left Module Current Position x-Coordinate", frontLeftModule.getCurrentPosition().x);
+        SmartDashboard.putNumber("Modules/Front Right Module Current Position x-Coordinate", frontRightModule.getCurrentPosition().x);
+        SmartDashboard.putNumber("Modules/Back Left Module Current Position x-Coordinate", backLeftModule.getCurrentPosition().x);
+        SmartDashboard.putNumber("Modules/Back Right Module Current Position x-Coordinate", backRightModule.getCurrentPosition().x);
 
-        SmartDashboard.putString("Current Position", "Position y-Coordinate (relative to center)");
-        SmartDashboard.putNumber("Front Left Module Current Position y-Coordinate", frontLeftModule.getCurrentPosition().y);
-        SmartDashboard.putNumber("Front Right Module Current Position y-Coordinate", frontRightModule.getCurrentPosition().y);
-        SmartDashboard.putNumber("Back Left Module Current Position y-Coordinate", backLeftModule.getCurrentPosition().y);
-        SmartDashboard.putNumber("Back Right Module Current Position y-Coordinate", backRightModule.getCurrentPosition().y);
+        SmartDashboard.putString("Modules/Current Position", "Position y-Coordinate (relative to center)");
+        SmartDashboard.putNumber("Modules/Front Left Module Current Position y-Coordinate", frontLeftModule.getCurrentPosition().y);
+        SmartDashboard.putNumber("Modules/Front Right Module Current Position y-Coordinate", frontRightModule.getCurrentPosition().y);
+        SmartDashboard.putNumber("Modules/Back Left Module Current Position y-Coordinate", backLeftModule.getCurrentPosition().y);
+        SmartDashboard.putNumber("Modules/Back Right Module Current Position y-Coordinate", backRightModule.getCurrentPosition().y);
 
         
 // A module's location relative to the center of mass the robot
-        SmartDashboard.putString("Module Location Relative to Center of Robot", "Location x-Coordinate");
-        SmartDashboard.putNumber("Front Left Module x-Coordinate", frontLeftModule.getModulePosition().x);
-        SmartDashboard.putNumber("Front Right Module x-Coordinate", frontRightModule.getModulePosition().x);
-        SmartDashboard.putNumber("Back Left Module x-Coordinate", backLeftModule.getModulePosition().x);
-        SmartDashboard.putNumber("Back Right Module x-Coordinate", backRightModule.getModulePosition().x);
+        SmartDashboard.putString("Modules/Module Location Relative to Center of Robot", "Location x-Coordinate");
+        SmartDashboard.putNumber("Modules/Front Left Module x-Coordinate", frontLeftModule.getModulePosition().x);
+        SmartDashboard.putNumber("Modules/Front Right Module x-Coordinate", frontRightModule.getModulePosition().x);
+        SmartDashboard.putNumber("Modules/Back Left Module x-Coordinate", backLeftModule.getModulePosition().x);
+        SmartDashboard.putNumber("Modules/Back Right Module x-Coordinate", backRightModule.getModulePosition().x);
 
-        SmartDashboard.putString("Module Location Relative to Center of Robot", "Location y-Coordinate");
-        SmartDashboard.putNumber("Front Left Module y-Coordinate", frontLeftModule.getModulePosition().y);
-        SmartDashboard.putNumber("Front Right Module y-Coordinate", frontRightModule.getModulePosition().y);
-        SmartDashboard.putNumber("Back Left Module y-Coordinate", backLeftModule.getModulePosition().y);
-        SmartDashboard.putNumber("Back Right Module y-Coordinate", backRightModule.getModulePosition().y);
+        SmartDashboard.putString("Modules/Module Location Relative to Center of Robot", "Location y-Coordinate");
+        SmartDashboard.putNumber("Modules/Front Left Module y-Coordinate", frontLeftModule.getModulePosition().y);
+        SmartDashboard.putNumber("Modules/Front Right Module y-Coordinate", frontRightModule.getModulePosition().y);
+        SmartDashboard.putNumber("Modules/Back Left Module y-Coordinate", backLeftModule.getModulePosition().y);
+        SmartDashboard.putNumber("Modules/Back Right Module y-Coordinate", backRightModule.getModulePosition().y);
 
 
 // Velocity that modules are at
@@ -179,29 +179,29 @@ public class DrivetrainSubsystem extends Subsystem {
 
 
 //CAN Encoder stuff
-        SmartDashboard.putString("CAN Encoder Absolute Position", "Absolute Position");
-        SmartDashboard.putNumber("CAN Encoder Absolute Position", frontLeftCANCoder.getAbsolutePosition());
-        SmartDashboard.putNumber("CAN Encoder Absolute Position", frontRightCANCoder.getAbsolutePosition());
-        SmartDashboard.putNumber("CAN Encoder Absolute Position", backLeftCANCoder.getAbsolutePosition());
-        SmartDashboard.putNumber("CAN Encoder Absolute Position", backRightCANCoder.getAbsolutePosition());
+        SmartDashboard.putString("CAN_Encoders/CAN Encoder Absolute Position", "Absolute Position");
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Absolute Position", frontLeftCANCoder.getAbsolutePosition());
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Absolute Position", frontRightCANCoder.getAbsolutePosition());
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Absolute Position", backLeftCANCoder.getAbsolutePosition());
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Absolute Position", backRightCANCoder.getAbsolutePosition());
 
-        SmartDashboard.putString("Angle/CAN Encoder Position", "Position");
-        SmartDashboard.putNumber("Angle/CAN Encoder Position", frontLeftCANCoder.getPosition());
-        SmartDashboard.putNumber("Angle/CAN Encoder Position", frontRightCANCoder.getPosition());
-        SmartDashboard.putNumber("Angle/CAN Encoder Position", backLeftCANCoder.getPosition());
-        SmartDashboard.putNumber("Angle/CAN Encoder Position", backRightCANCoder.getPosition());
+        SmartDashboard.putString("CAN_Encoders/CAN Encoder Position", "Position");
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Position", frontLeftCANCoder.getPosition());
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Position", frontRightCANCoder.getPosition());
+        SmartDashboard.putNumber("ACAN_Encoders/CAN Encoder Position", backLeftCANCoder.getPosition());
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Position", backRightCANCoder.getPosition());
 
-        SmartDashboard.putString("CAN Encoder Velocity", "Velocity");
-        SmartDashboard.putNumber("CAN Encoder Velocity", frontLeftCANCoder.getVelocity());
-        SmartDashboard.putNumber("CAN Encoder Velocity", frontRightCANCoder.getVelocity());
-        SmartDashboard.putNumber("CAN Encoder Velocity", backLeftCANCoder.getVelocity());
-        SmartDashboard.putNumber("CAN Encoder Velocity", backRightCANCoder.getVelocity());
+        SmartDashboard.putString("CAN_Encoders/CAN Encoder Velocity", "Velocity");
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Velocity", frontLeftCANCoder.getVelocity());
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Velocity", frontRightCANCoder.getVelocity());
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Velocity", backLeftCANCoder.getVelocity());
+        SmartDashboard.putNumber("CAN_Encoders/CAN Encoder Velocity", backRightCANCoder.getVelocity());
 
-        SmartDashboard.putString("CAN Encoder Previous Error", "Previous Error");
-        SmartDashboard.putString("CAN Encoder Previous Error", frontLeftCANCoder.getLastError().toString());
-        SmartDashboard.putString("CAN Encoder Previous Error", frontRightCANCoder.getLastError().toString());
-        SmartDashboard.putString("CAN Encoder Previous Error", backLeftCANCoder.getLastError().toString());
-        SmartDashboard.putString("CAN Encoder Previous Error", backRightCANCoder.getLastError().toString());
+        SmartDashboard.putString("CAN_Encoders/CAN Encoder Previous Error", "Previous Error");
+        SmartDashboard.putString("CAN_Encoders/CAN Encoder Previous Error", frontLeftCANCoder.getLastError().toString());
+        SmartDashboard.putString("CAN_Encoders/CAN Encoder Previous Error", frontRightCANCoder.getLastError().toString());
+        SmartDashboard.putString("CAN_Encoders/CAN Encoder Previous Error", backLeftCANCoder.getLastError().toString());
+        SmartDashboard.putString("CAN_Encoders/AN Encoder Previous Error", backRightCANCoder.getLastError().toString());
 
         SmartDashboard.putNumber("Gyroscope Angle", gyroscope.getAngle().toDegrees());
         // Added Gyroscope Info
