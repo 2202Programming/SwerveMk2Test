@@ -185,11 +185,11 @@ public class DrivetrainSubsystem extends Subsystem {
         SmartDashboard.putNumber("CAN Encoder Absolute Position", backLeftCANCoder.getAbsolutePosition());
         SmartDashboard.putNumber("CAN Encoder Absolute Position", backRightCANCoder.getAbsolutePosition());
 
-        SmartDashboard.putString("CAN Encoder Position", "Position");
-        SmartDashboard.putNumber("CAN Encoder Position", frontLeftCANCoder.getPosition());
-        SmartDashboard.putNumber("CAN Encoder Position", frontRightCANCoder.getPosition());
-        SmartDashboard.putNumber("CAN Encoder Position", backLeftCANCoder.getPosition());
-        SmartDashboard.putNumber("CAN Encoder Position", backRightCANCoder.getPosition());
+        SmartDashboard.putString("Angle/CAN Encoder Position", "Position");
+        SmartDashboard.putNumber("Angle/CAN Encoder Position", frontLeftCANCoder.getPosition());
+        SmartDashboard.putNumber("Angle/CAN Encoder Position", frontRightCANCoder.getPosition());
+        SmartDashboard.putNumber("Angle/CAN Encoder Position", backLeftCANCoder.getPosition());
+        SmartDashboard.putNumber("Angle/CAN Encoder Position", backRightCANCoder.getPosition());
 
         SmartDashboard.putString("CAN Encoder Velocity", "Velocity");
         SmartDashboard.putNumber("CAN Encoder Velocity", frontLeftCANCoder.getVelocity());
